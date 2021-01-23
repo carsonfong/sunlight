@@ -43,10 +43,14 @@ sum_monthly <- df_angles %>%
 sum_monthly$Month <- factor(sum_monthly$Month,levels = c("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"))
 
 # Chart
-ggplot(sum_monthly) +
+graph <- ggplot(sum_monthly) +
   geom_col(mapping = aes(x = Month, y = sun_hr)) +
   theme_minimal() +
-  labs(title = "Hours of Direct Sunlight into my Apartment",
+  labs(title = "Hours of Direct Sunlight into My Apartment Each Day",
        caption = "@carsonfong | Data Sources: NRC Canada, Saroglou (2017), Critchley (2016)",
-       y = "Hours of direct sunlight",
+       y = "Hours of direct sunlight each day",
        x = "Month")
+
+ggsave(filename = "sunlight_hrs.png",
+       plot = graph,
+       width = 7, height = 4, units = "in")
