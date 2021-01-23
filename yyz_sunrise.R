@@ -47,6 +47,6 @@ ggplot(sum_monthly) +
   geom_col(mapping = aes(x = Month, y = sun_hr)) +
   theme_minimal() +
   labs(title = "Hours of Direct Sunlight into my Apartment",
-       caption = "@carsonfong | Data Sources: NRC Canada Sunrise/sunset calculator, Saroglou (2017), Critchley (2016)",
-       y = "Protein (g) in 100g of Food",
-       x = "Calories in 100g of Food")
+       caption = "@carsonfong | Data Sources: NRC Canada, Saroglou (2017), Critchley (2016)",
+       y = "Hours of direct sunlight",
+       x = "Month")
